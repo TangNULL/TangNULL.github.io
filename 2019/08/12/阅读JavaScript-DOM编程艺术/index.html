@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="虚度日常">
 <meta property="og:description" content="47/305进度 这本书不是那种工具书类型，应该是介绍一些思想。  仅记一些印象深的信息吧。  DOM是适用于多种环境和多种程序设计语言的通用型APIscript引入放在&amp;lt;/body&amp;gt;之前 整数的表示范围正负2^53">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-08-12T06:49:44.127Z">
+<meta property="og:updated_time" content="2019-08-12T09:31:24.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阅读JavaScript DOM编程艺术">
 <meta name="twitter:description" content="47/305进度 这本书不是那种工具书类型，应该是介绍一些思想。  仅记一些印象深的信息吧。  DOM是适用于多种环境和多种程序设计语言的通用型APIscript引入放在&amp;lt;/body&amp;gt;之前 整数的表示范围正负2^53">
@@ -357,6 +357,21 @@ javascript:void(0);   可以用于a标签不跳转  void 0;返回undefined</code
 
 <p><strong>渐进增强</strong>：用一些额外的信息层去包裹原始数据。按照这个原则创建出阿里的网页几乎都符合“平稳退化”原则。</p>
 <p>当onload被触发时，document对象已经存在。</p>
+<p>对于一个函数，考虑是否平稳退化？ js是否与html分离？ 某些方法浏览器是否支持？ 共享onload。</p>
+<pre><code>function addLoadEvent(func){
+    var onloadFunc=window.onload;
+    if(typeof onloadFunc !=&quot;function&quot;){
+        window.onload=func;
+    }
+    else{
+        window.onload=function(){
+            onloadFunc();
+            func();
+        }
+    }
+}</code></pre><p><strong>不要做太多假设</strong>：不要假设元素一定存在，引入测试和检查，从而保证js代码平稳退化。</p>
+<p><strong>DOM Core和HTML-DOM</strong>:<br>后者提供的src属性将element.getAttribute(“src”)简化为element.src。</p>
+<p>Ajax：异步加载页面内容。依赖js，核心：XMLHttpRequest，不同浏览器的实现方式不一样。</p>
 
       
     </div>

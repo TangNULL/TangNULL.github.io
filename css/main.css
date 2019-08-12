@@ -1935,7 +1935,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d5ff7c;
+  background: #e7bd6a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3104,7 +3104,7 @@ img:hover {
   }
 }
 body {
-  background: url("/images/bg3.jpg");
+  background: #a9a9a9;
 }
 .post-body p a {
   color: #0593d3;
@@ -3131,7 +3131,6 @@ body {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background-size: 200px 100px;
   background: url("/images/bg4.jpg");
 }
 .site-subtitle {
@@ -3178,4 +3177,8 @@ body {
 }
 .author {
   color: #97ffff;
+}
+.tag-cloud-tags a {
+  font-size: 15px !important;
+  color: #ff69b4 !important;
 }
