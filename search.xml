@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[阅读JavaScript DOM编程艺术]]></title>
+    <url>%2F2019%2F08%2F12%2F%E9%98%85%E8%AF%BBJavaScript-DOM%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF%2F</url>
+    <content type="text"><![CDATA[47/305进度 这本书不是那种工具书类型，应该是介绍一些思想。 仅记一些印象深的信息吧。 DOM是适用于多种环境和多种程序设计语言的通用型APIscript引入放在&lt;/body&gt;之前 整数的表示范围正负2^53 getAttribute方法不属于document对象。 null和 undefined？？检查某一个数据是否是null其实是在检查它是否存在 if(node.getAttribute(&quot;title&quot;)){}DOM工作模式：先加载文档的静态内容,再动态刷新。对页面内容刷新却不需要在浏览器刷新页面。？？？？ 上面这个emmm不是很懂。不过又看到了另外一个问题，浏览器两个常驻线程：javascript引擎线程和GUI渲染线程。js如果一个方法里包含”加载…”、”获取数据”、”hide加载…” ，那么加载特效不会出现，因为js执行时，GUI会挂起，(GUI和JS线程是怎么做到互斥的。。。锁？信号量？)，所以，必须要人为setTimeout，强行让js空闲，从而GUI可以渲染。 不过看到有人说Firefox就没问题。。。很迷 元素节点1 属性节点2 文本节点3 平稳退化：确保网页在没有js的情况下也能正常工作。 伪协议 javascript:func(params); tencent://(QQ号) 关联QQ data:(用base64编码来在浏览器端输出二进制文件) javascript:void(0); 可以用于a标签不跳转 void 0;返回undefinedps：IE中a标签点击事件调用顺序: onclick-&gt;window.onbeforeunload-&gt;href 用伪协议来调用js代码很不好。因为不符合“平稳退化”。 比较符合平稳退化的： 1&lt;a href=&quot;www.baidu.com&quot; onclick=&quot;javascript:popUp(this.href);return false;&quot;&gt;example&lt;/a&gt; 渐进增强：用一些额外的信息层去包裹原始数据。按照这个原则创建出阿里的网页几乎都符合“平稳退化”原则。 当onload被触发时，document对象已经存在。]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PLAN]]></title>
+    <url>%2F2019%2F08%2F12%2FPLAN%2F</url>
+    <content type="text"><![CDATA[路线（参考ZH）css第一阶段 2018年的 或者看看bootstrap某些类的源码 jsJavaScript DOM编程艺术 第二阶段 Free Code Camp 当遇到不认识的api或知识点时可以到MDN上去查 jQueryHead First jQuery es6阮一峰es6入门 三大框架就Vue吧 gulp&amp;webpacksass]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[create blog]]></title>
     <url>%2F2019%2F08%2F08%2Ftitle%2F</url>
     <content type="text"><![CDATA[一个月过去了，桨都快划烂了。 跟tyf一起学习前端吧~ 大概会从es6开始？？]]></content>
