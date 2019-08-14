@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="虚度日常">
 <meta property="og:description" content="47/305进度 这本书不是那种工具书类型，应该是介绍一些思想。  仅记一些印象深的信息吧。  DOM是适用于多种环境和多种程序设计语言的通用型APIscript引入放在&amp;lt;/body&amp;gt;之前 整数的表示范围正负2^53">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-08-12T09:31:24.190Z">
+<meta property="og:updated_time" content="2019-08-14T05:33:26.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阅读JavaScript DOM编程艺术">
 <meta name="twitter:description" content="47/305进度 这本书不是那种工具书类型，应该是介绍一些思想。  仅记一些印象深的信息吧。  DOM是适用于多种环境和多种程序设计语言的通用型APIscript引入放在&amp;lt;/body&amp;gt;之前 整数的表示范围正负2^53">
@@ -372,6 +372,29 @@ javascript:void(0);   可以用于a标签不跳转  void 0;返回undefined</code
 }</code></pre><p><strong>不要做太多假设</strong>：不要假设元素一定存在，引入测试和检查，从而保证js代码平稳退化。</p>
 <p><strong>DOM Core和HTML-DOM</strong>:<br>后者提供的src属性将element.getAttribute(“src”)简化为element.src。</p>
 <p>Ajax：异步加载页面内容。依赖js，核心：XMLHttpRequest，不同浏览器的实现方式不一样。</p>
+<p>2019/08/13 进度 133/305</p>
+<p>CSS伪类</p>
+<pre><code>:active    向被激活的元素添加样式。
+:focus    向拥有键盘输入焦点的元素添加样式。
+:hover    当鼠标悬浮在元素上方时，向元素添加样式。
+:link    向未被访问的链接添加样式。
+:visited    向已被访问的链接添加样式。
+:first-child    向元素的第一个子元素添加样式。
+:lang    向带有指定 lang 属性的元素添加样式。</code></pre><p>通过给元素增加class而非直接通过DOM修改 以实现表现层和行为层更分离。</p>
+<p>2019/08/14 进度 200/305</p>
+<pre><code>var ss=&quot;move(&apos;&quot;+id+&quot;&apos;,&quot;+x+&quot;,&quot;+y+&quot;,&quot;+interval+&quot;)&quot;;  
+//这个字符串拼接不可少 否则setTimeout失效
+movement=setTimeout(ss,interval);
+
+如果随着用户点击不同，目标对象向不同方向移动，则需要进行clearTimeout，
+并将movement作为目标对象的属性，即ele.movement=setTimeout(ss,interval);</code></pre><p>CSS的overflow：hidden、visible、scroll、auto</p>
+<p>结构层 HTML </p>
+<p>表示层 CSS</p>
+<p>行为层 JS和DOM</p>
+<p>HTML5使其界限变得模糊</p>
+<p>库，就是可重用的代码包</p>
+<p>OVER</p>
+<p>跳过下面的计划，简单看一下es6吧。</p>
 
       
     </div>
@@ -411,6 +434,10 @@ javascript:void(0);   可以用于a标签不跳转  void 0;返回undefined</code
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/14/简单看看es6/" rel="prev" title="简单看看es6">
+                简单看看es6 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -480,7 +507,7 @@ javascript:void(0);   可以用于a标签不跳转  void 0;返回undefined</code
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
