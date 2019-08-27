@@ -86,15 +86,18 @@
 
 
 
+<meta name="description" content="ES5只有函数作用域和全局作用域。 ES6 {{{{ 		let insane = &apos;Hello World&apos;; 		{console.log(insane);}  	}}}}; //true  {{{{  		{let insane = &apos;Hello World&apos;}   		console.log(insane); // 报错 	}}}};const和let一样只在声明所在的块级作用域有效，且不">
 <meta name="keywords" content="学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单看看es6">
 <meta property="og:url" content="http://yoursite.com/2019/08/14/简单看看es6/index.html">
 <meta property="og:site_name" content="虚度日常">
+<meta property="og:description" content="ES5只有函数作用域和全局作用域。 ES6 {{{{ 		let insane = &apos;Hello World&apos;; 		{console.log(insane);}  	}}}}; //true  {{{{  		{let insane = &apos;Hello World&apos;}   		console.log(insane); // 报错 	}}}};const和let一样只在声明所在的块级作用域有效，且不">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-08-14T05:34:33.792Z">
+<meta property="og:updated_time" content="2019-08-14T09:21:07.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单看看es6">
+<meta name="twitter:description" content="ES5只有函数作用域和全局作用域。 ES6 {{{{ 		let insane = &apos;Hello World&apos;; 		{console.log(insane);}  	}}}}; //true  {{{{  		{let insane = &apos;Hello World&apos;}   		console.log(insane); // 报错 	}}}};const和let一样只在声明所在的块级作用域有效，且不">
 
 
 
@@ -324,7 +327,40 @@
       
 
       
-        
+        <p>ES5只有函数作用域和全局作用域。</p>
+<p>ES6</p>
+<pre><code>{{{{
+		let insane = 'Hello World';
+		{console.log(insane);} 
+	}}}};
+//true
+
+{{{{
+ 		{let insane = 'Hello World'}
+  		console.log(insane); // 报错
+	}}}};</code></pre><p>const和let一样只在声明所在的块级作用域有效，且不能重复声明</p>
+<p>只有<strong>严格</strong>undefined才会使用到默认值  null也不行</p>
+<p>Function()构造函数和函数直接量之间的差别有一点就是：使用构造函数Function()创建的函数不使用词法作用域，相反的，它们总是被顶级函数来编译  global  而不是  local</p>
+<pre><code>var y = &quot;global&quot;; 
+function constructFunction() { 
+    var y = &quot;local&quot;; 
+    //Function()构造函数 
+    return new Function(&quot;return y;&quot;);//不使用局部作用域 
+} 
+function constFunction() { 
+    var y = &quot;local&quot;; 
+    //函数直接量 
+    var f = function () { 
+        return y;//使用局部作用域 
+    }; 
+    return f; 
+} 
+
+//显示 global，因为Function()构造函数返回的函数并不使用局部作用域 
+alert(constructFunction()()); 
+//显示 lobal，因为函数直接量返回的函数并使用局部作用域 
+alert(constFunction()()); </code></pre><p>箭头函数：函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。<br>普通函数：执行时this应该指向全局对象window。</p>
+
       
     </div>
     
@@ -517,6 +553,7 @@
 
 
   <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
 
 
 
